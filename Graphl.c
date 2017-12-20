@@ -1,6 +1,6 @@
 #include "Graphl.h"
 #include <stdlib.h>
-#include "Graphm.h"
+
 void GL_Create(int vertexCount)
 {
 	Graphl *gl = (Graphl*)malloc(sizeof(Graphl));
@@ -12,9 +12,16 @@ void GL_Create(int vertexCount)
 }
 void GL_SetFromGM(Graphm *gm)
 {
-	
+	for(int i = 0; i < gm->vertexCount; i++)
+	{
+		
+	}
 }
 GLLink *GL_CreateLink(char data)
 {
-	GLLink *out = (GLLink*
+	
+}
+void GL_SetEdge()
+{
+	
 }

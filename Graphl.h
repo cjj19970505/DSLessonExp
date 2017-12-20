@@ -1,5 +1,6 @@
 #ifndef GRAPHL_H
 #define GRAPHL_H
+#include "Graphm.h"
 struct GLLink
 {
 	char data;
