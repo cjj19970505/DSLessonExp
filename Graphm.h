@@ -17,8 +17,8 @@ int GM_FirstAdj(Graphm *graph, int oneVertex);
 int GM_NextAdj(Graphm *graph, int oneVertex, int preVertex);
 int GM_GetWeight(Graphm *graph, int from, int to);
 int GM_SetDoubleEdge(Graphm *graph, int v1, int v2, int weight);
-void GM_DFS(Graphm *graph, int* visited, int currVert, void *operation(Graphm *graph, int vert));
-void GM_BFS(Graphm *graph, int currVert, void *operation(Graphm *graph, int vert));
+void GM_DFS(Graphm *graph, int* visited, int currVert, void (*operation)(Graphm *graph, int vert));
+void GM_BFS(Graphm *graph, int currVert, void (*operation)(Graphm *graph, int vert));
 void GM_SetData(Graphm *graph, int vert, char data);
 char GM_GetData(Graphm *graph, int vert);
 #endif

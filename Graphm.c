@@ -45,11 +45,11 @@ void GM_Print(Graphm *graph)
 			int w = GM_GetWeight(graph, i, j);
 			if(w<0)
 			{
-				printf("-1 ",graph->adjMatrix[i][j]);
+				printf("-1  ",graph->adjMatrix[i][j]);
 			}
 			else
 			{
-				printf("%d ",graph->adjMatrix[i][j]);
+				printf("%d  ",graph->adjMatrix[i][j]);
 			}
 			
 		}
@@ -123,7 +123,7 @@ int GM_NextAdj(Graphm *graph, int oneVertex, int preVertex)
 	}
 	return -1;
 }
-void GM_DFS(Graphm *graph, int* visited, int currVert, void *operation(Graphm *graph, int vert))
+void GM_DFS(Graphm *graph, int* visited, int currVert, void (*operation)(Graphm *graph, int vert))
 {
 	int visitedArrayCreatedHere = 0;
 	if(visited==NULL)
@@ -160,7 +160,7 @@ void GM_DFS(Graphm *graph, int* visited, int currVert, void *operation(Graphm *g
 		free(visited);
 	}
 }
-void GM_BFS(Graphm *graph, int currVert, void *operation(Graphm *graph, int vert))
+void GM_BFS(Graphm *graph, int currVert, void (*operation)(Graphm *graph, int vert))
 {
 	int visited[graph->vertCount];
 	for(int i=0;i<graph->vertCount;i++)
@@ -188,7 +188,6 @@ void GM_BFS(Graphm *graph, int currVert, void *operation(Graphm *graph, int vert
 		while(curr >= 0);
 	}
 	IQ_Delete(queue);
-	
 }
 void GM_Delete(Graphm *graph)
 {
